@@ -69,12 +69,12 @@ jobs:
         # create skip files in here as we want to make merging this with future updates
         # from Adafruit easier than manually creating / merging files
         # also allows us to skip examples within submodules (e.g. Adafruit_TinyUSB_Arduino)
-        touch $HOME/Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/Composite/mouse_external_flash/.MSE_RBA.test.skip
-        touch $HOME/Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/HID/hid_composite/.MSE_RBA.test.skip
-        touch $HOME/Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/MassStorage/msc_external_flash/.MSE_RBA.test.skip
-        touch $HOME/Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/MassStorage/msc_external_flash_sdcard/.MSE_RBA.test.skip
-        touch $HOME/Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/MassStorage/msc_sd/.MSE_RBA.test.skip
-        touch $HOME/Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/WebUSB/webusb_rgb/.MSE_RBA.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/Composite/mouse_external_flash/.MSE_RBA.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/HID/hid_composite/.MSE_RBA.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/MassStorage/msc_external_flash/.MSE_RBA.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/MassStorage/msc_external_flash_sdcard/.MSE_RBA.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/MassStorage/msc_sd/.MSE_RBA.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/WebUSB/webusb_rgb/.MSE_RBA.test.skip
         touch $HOME/Arduino/libraries/Bluefruit52Lib/examples/Hardware/adc_vbat/.MSE_RBA.test.skip
         touch $HOME/Arduino/libraries/Bluefruit52Lib/examples/Peripheral/StandardFirmataBLE/.MSE_RBA.test.skip
         touch $HOME/Arduino/libraries/SPI/examples/BarometricPressureSensor/.MSE_RBA.test.skip
