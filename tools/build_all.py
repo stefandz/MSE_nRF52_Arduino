@@ -18,7 +18,7 @@ skip_count = 0
 build_format = '| {:25} | {:35} | {:18} | {:6} |'
 build_separator = '-' * 88
 
-default_boards = [ 'cluenrf52840', 'cplaynrf52840', 'feather52832', 'feather52840', 'feather52840sense', 'itsybitsy52840' ]
+default_boards = [ 'MSE_RBA' ]
 build_boards = []
 
 # build all variants if input not existed

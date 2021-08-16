@@ -48,9 +48,12 @@ jobs:
         rm -r $HOME/$BSP_PATH/*
         ln -s $GITHUB_WORKSPACE $HOME/$BSP_PATH/$BSP_VERSION
 
-        # Install library dependency - don't do this as we don't care about library compatibility and we don't provide an I2C or SPI interface
-        # arduino-cli lib install "Adafruit AHRS" "Adafruit APDS9960 Library" "Adafruit Arcada Library" "Adafruit BMP280 Library" "Adafruit Circuit Playground" "Adafruit EPD" "Adafruit GFX Library" "Adafruit HX8357 Library" "Adafruit ILI9341" "Adafruit LIS3MDL" "Adafruit LSM6DS" "Adafruit NeoPixel" "Adafruit NeoMatrix" "Adafruit Sensor Calibration" "Adafruit SHT31 Library" "Adafruit SSD1306" "Adafruit ST7735 and ST7789 Library" "SdFat - Adafruit Fork"
-        # arduino-cli lib install "Arduino_TensorFlowLite" "MIDI Library"
+        # Install library dependency - don't do most of this as we (mostly) don't care about library 
+        # compatibility, we don't provide an I2C or SPI interface, nor do we have an onboard NeoPixel
+        # see also many .MSE_RBA.test.skip files in library examples
+        arduino-cli install "MIDI Library" "Adafruit GFX Library" "Adafruit NeoPixel"
+        # arduino-cli lib install "Adafruit AHRS" "Adafruit APDS9960 Library" "Adafruit Arcada Library" "Adafruit BMP280 Library" "Adafruit Circuit Playground" "Adafruit EPD" "Adafruit HX8357 Library" "Adafruit ILI9341" "Adafruit LIS3MDL" "Adafruit LSM6DS" "Adafruit NeoMatrix" "Adafruit Sensor Calibration" "Adafruit SHT31 Library" "Adafruit SSD1306" "Adafruit ST7735 and ST7789 Library" "SdFat - Adafruit Fork"
+        # arduino-cli lib install "Arduino_TensorFlowLite"
         
         # TODO use firmata master to prevent build error with gcc v9 (should be remove after 2.5.9 is released)
         # https://github.com/firmata/arduino/pull/438
@@ -62,6 +65,27 @@ jobs:
 
         # Library summary
         arduino-cli lib list
+
+        # create skip files in here as we want to make merging this with future updates
+        # from Adafruit easier than manually creating / merging files
+        # also allows us to skip examples within submodules (e.g. Adafruit_TinyUSB_Arduino)
+        touch $HOME/Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/Composite/mouse_external_flash/.MSE_RBA.test.skip
+        touch $HOME/Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/HID/hid_composite/.MSE_RBA.test.skip
+        touch $HOME/Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/MassStorage/msc_external_flash/.MSE_RBA.test.skip
+        touch $HOME/Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/MassStorage/msc_external_flash_sdcard/.MSE_RBA.test.skip
+        touch $HOME/Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/MassStorage/msc_sd/.MSE_RBA.test.skip
+        touch $HOME/Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/WebUSB/webusb_rgb/.MSE_RBA.test.skip
+        touch $HOME/Arduino/libraries/Bluefruit52Lib/examples/Hardware/adc_vbat/.MSE_RBA.test.skip
+        touch $HOME/Arduino/libraries/Bluefruit52Lib/examples/Peripheral/StandardFirmataBLE/.MSE_RBA.test.skip
+        touch $HOME/Arduino/libraries/SPI/examples/BarometricPressureSensor/.MSE_RBA.test.skip
+        touch $HOME/Arduino/libraries/SPI/examples/DigitalPotControl/.MSE_RBA.test.skip
+        touch $HOME/Arduino/libraries/Wire/examples/SFRRanger_reader/.MSE_RBA.test.skip
+        touch $HOME/Arduino/libraries/Wire/examples/digital_potentiometer/.MSE_RBA.test.skip
+        touch $HOME/Arduino/libraries/Wire/examples/main_reader/.MSE_RBA.test.skip
+        touch $HOME/Arduino/libraries/Wire/examples/main_scan/.MSE_RBA.test.skip
+        touch $HOME/Arduino/libraries/Wire/examples/main_writer/.MSE_RBA.test.skip
+        touch $HOME/Arduino/libraries/Wire/examples/secondary_receiver/.MSE_RBA.test.skip
+        touch $HOME/Arduino/libraries/Wire/examples/secondary_sender/.MSE_RBA.test.skip
 
     - name: Build examples
       run: python3 tools/build_all.py ${{ matrix.arduino-platform }}
