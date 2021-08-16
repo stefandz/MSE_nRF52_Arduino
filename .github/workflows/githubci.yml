@@ -75,17 +75,17 @@ jobs:
         touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/MassStorage/msc_external_flash_sdcard/.MSE_RBA.test.skip
         touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/MassStorage/msc_sd/.MSE_RBA.test.skip
         touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/WebUSB/webusb_rgb/.MSE_RBA.test.skip
-        touch $HOME/Arduino/libraries/Bluefruit52Lib/examples/Hardware/adc_vbat/.MSE_RBA.test.skip
-        touch $HOME/Arduino/libraries/Bluefruit52Lib/examples/Peripheral/StandardFirmataBLE/.MSE_RBA.test.skip
-        touch $HOME/Arduino/libraries/SPI/examples/BarometricPressureSensor/.MSE_RBA.test.skip
-        touch $HOME/Arduino/libraries/SPI/examples/DigitalPotControl/.MSE_RBA.test.skip
-        touch $HOME/Arduino/libraries/Wire/examples/SFRRanger_reader/.MSE_RBA.test.skip
-        touch $HOME/Arduino/libraries/Wire/examples/digital_potentiometer/.MSE_RBA.test.skip
-        touch $HOME/Arduino/libraries/Wire/examples/main_reader/.MSE_RBA.test.skip
-        touch $HOME/Arduino/libraries/Wire/examples/main_scan/.MSE_RBA.test.skip
-        touch $HOME/Arduino/libraries/Wire/examples/main_writer/.MSE_RBA.test.skip
-        touch $HOME/Arduino/libraries/Wire/examples/secondary_receiver/.MSE_RBA.test.skip
-        touch $HOME/Arduino/libraries/Wire/examples/secondary_sender/.MSE_RBA.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Bluefruit52Lib/examples/Hardware/adc_vbat/.MSE_RBA.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Bluefruit52Lib/examples/Peripheral/StandardFirmataBLE/.MSE_RBA.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/SPI/examples/BarometricPressureSensor/.MSE_RBA.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/SPI/examples/DigitalPotControl/.MSE_RBA.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Wire/examples/SFRRanger_reader/.MSE_RBA.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Wire/examples/digital_potentiometer/.MSE_RBA.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Wire/examples/main_reader/.MSE_RBA.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Wire/examples/main_scan/.MSE_RBA.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Wire/examples/main_writer/.MSE_RBA.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Wire/examples/secondary_receiver/.MSE_RBA.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Wire/examples/secondary_sender/.MSE_RBA.test.skip
 
     - name: Build examples
       run: python3 tools/build_all.py ${{ matrix.arduino-platform }}
