@@ -51,7 +51,7 @@ jobs:
         # Install library dependency - don't do most of this as we (mostly) don't care about library 
         # compatibility, we don't provide an I2C or SPI interface, nor do we have an onboard NeoPixel
         # see also many .MSE_RBA.test.skip files in library examples
-        arduino-cli install "MIDI Library" "Adafruit GFX Library" "Adafruit NeoPixel"
+        arduino-cli lib install "MIDI Library" "Adafruit GFX Library" "Adafruit NeoPixel"
         # arduino-cli lib install "Adafruit AHRS" "Adafruit APDS9960 Library" "Adafruit Arcada Library" "Adafruit BMP280 Library" "Adafruit Circuit Playground" "Adafruit EPD" "Adafruit HX8357 Library" "Adafruit ILI9341" "Adafruit LIS3MDL" "Adafruit LSM6DS" "Adafruit NeoMatrix" "Adafruit Sensor Calibration" "Adafruit SHT31 Library" "Adafruit SSD1306" "Adafruit ST7735 and ST7789 Library" "SdFat - Adafruit Fork"
         # arduino-cli lib install "Arduino_TensorFlowLite"
         
