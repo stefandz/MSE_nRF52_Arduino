@@ -12,17 +12,16 @@ This repository contains the Arduino BSP for MSE nRF52 series:
 2. Start the Arduino IDE
 3. Go into Preferences
 4. Add https://www.adafruit.com/package_adafruit_index.json as an 'Additional Board Manager URL'
-5. Add https://www.adafruit.com/package_adafruit_index.json as an 'Additional Board Manager URL'
-6. Restart the Arduino IDE
-7. Open the Boards Manager from the Tools -> Board menu and install 'Adafruit nRF52 by Adafruit'
-8. `cd <SKETCHBOOK>`, where `<SKETCHBOOK>` is your Arduino Sketch folder:
+5. Restart the Arduino IDE
+6. Open the Boards Manager from the Tools > Board menu and install 'Adafruit nRF52 by Adafruit'
+7. `cd <SKETCHBOOK>`, where `<SKETCHBOOK>` is your Arduino Sketch folder:
    * macOS  : `~/Documents/Arduino`
    * Linux  : `~/Arduino`
    * Windows: `~/Documents/Arduino`
-9. Create a folder named `hardware/Adafruit`, if it does not exist, and change directories to it
-10. Clone this repo & its submodules: `git clone --recurse-submodules https://github.com/adafruit/Adafruit_nRF52_Arduino.git`
-11. Restart the Arduino IDE
-12. Once the BSP is installed, select 'Adafruit Bluefruit nRF52 Feather' from the Tools -> Board menu, which will update your system config to use the right compiler and settings for the nRF52.
+8. Create a folder named `hardware/MSE`, if it does not exist, and change directories to it
+9. Clone this repo & its submodules: `git clone --recurse-submodules https://github.com/stefandz/MSE_nRF52_Arduino`
+10. Restart the Arduino IDE
+11. Once the BSP is installed, select 'MSE NRF52840 Rewards Board A from the Tools > Board > MSE nRF52 boards menu, which will update your system config to use the right compiler and settings for the nRF52.
 
 ### Adafruit's nrfutil tools
 
@@ -37,35 +36,15 @@ $ pip3 install adafruit-nrfutil --user
 
 ### Drivers
 
-- [SiLabs CP2104 driver](http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx) is required for USB to Serial when using with Feather nRF52832
+- none required
 
 ## Bootloader
 
-Bootloader can be updated via UF2 file or DFU if already existed. Or flash on new blank chip using following guide
+Bootloader can be updated via UF2 file or DFU if already existed. Or flash on new blank chip using following guide.
 
-### Update Bootloader with UF2 ( nRF52840 only and require 0.4.0+ )
+### Burning new Bootloader (recommended)
 
-This only works with nRF52840 and require existing bootloader version is at least 0.4.0:
-
-- Quickly doulbe tap reset button to put your board in to bootloader mode. A mass storage device i.e `FTHR840BOOT` will appear
-- Download latest UF2 for your board i.e `update-{BOARD}-{version}_nosd.uf2` from [Adafruit_nRF52_Bootloader release page](https://github.com/adafruit/Adafruit_nRF52_Bootloader/releases)
-- Drap and drop the UF2 file into `FTHR840BOOT` drive to perform update then wait until the board reset.x
-
-### Update Bootloader with DFU
-
-To upgrade to the latest Bootloader + Softdevice using the serial port within Arduino IDE.
-
-- Select `Tools > Board > Adafruit Feather nRF52840 Express`
-- Select `Tools > Programmer > Bootloader DFU for Bluefruit nRF52`
-- Select `Tools > Burn Bootloader`
-- **WAIT** until the process complete ~30 seconds
-
-**Note: close the Serial Monitor before you click "Burn Bootloader". Afterwards, you shouldn't close the Arduino IDE, unplug the Feather, launch Serial Monitor etc ... to abort the process. There is a high chance it will brick your device! Do this with care and caution.**
-
-### Burning new Bootloader
-
-To burn the bootloader from within the Arduino IDE, you will need the following tools installed
-on your system and available in the system path:
+To burn the bootloader from within the Arduino IDE, you will need the following tools installed on your system and available in the system path:
 
 - Segger [JLink Software and Documentation Pack](https://www.segger.com/downloads/jlink)
 - Nordic [nRF5x Command Line Tools](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Command-Line-Tools)
@@ -81,21 +60,37 @@ $ ln -s $HOME/prog/nordic/nrfjprog/nrfjprog /usr/local/bin/nrfjprog
 
 Once the tools above have been installed and added to your system path, from the Arduino IDE:
 
-- Select `Tools > Board > Adafruit Feather nRF52840 Express`
-- Select `Tools > Programmer > J-Link for Feather52`
+- Select `Tools > Board > MSE nRF52 Boards > MSE nRF52840 Rewards Board A`
+- Select `Tools > Programmer > J-Link for Bluefruit nRF52`
 - Select `Tools > Burn Bootloader` with the board and J-Link connected
-
-If you wish to modify bootloader to your own need, check out its repo here [Adafruit_nRF52_Bootloader](https://github.com/adafruit/Adafruit_nRF52_Bootloader)
 
 #### Manually Burning the Bootloader via nrfjprog
 
-The bootloader hex file can be found at `bin/bootloader` run the command as follows:
+The bootloader hex file can be found in the `bootloader/$BOARD_NAME`  folder. Run the command as follows:
 
 ```
 $ nrfjprog -e -f nrf52
-$ nrfjprog --program feather_nrf52832_bootloader.hex -f nrf52
+$ nrfjprog --program bootloader_file_name.hex -f nrf52
 $ nrfjprog --reset -f nrf52
 ```
+
+## ### Update Bootloader with UF2 ( nRF52840-based boards only and require 0.4.0+ )
+
+This only works with nRF52840-based boards and require existing bootloader version is at least 0.4.0:
+
+- Quickly double tap reset button to put your board in to bootloader mode. A mass storage device i.e `MSE_REWARDS_A` will appear
+- Drap and drop the new UF2 file into `MSE_REWARDS_A` drive to perform update then wait until the board resets.
+
+### Update Bootloader with DFU
+
+To upgrade to the latest Bootloader + Softdevice using the serial port within Arduino IDE.
+
+- Select `Tools > Board > MSE nRF52 Boards > MSE nRF52840 Rewards Board A`
+- Select `Tools > Programmer > Bootloader DFU for Bluefruit nRF52`
+- Select `Tools > Burn Bootloader`
+- **WAIT** until the process complete ~30 seconds
+
+**Note: close the Serial Monitor before you click "Burn Bootloader". Afterwards, you shouldn't close the Arduino IDE, unplug the board, launch Serial Monitor etc ... to abort the process. There is a high chance it will brick your device! Do this with care and caution.**
 
 ## Credits
 
