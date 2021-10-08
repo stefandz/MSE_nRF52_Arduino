@@ -19,7 +19,7 @@ This repository contains the Arduino BSP for MSE nRF52 series:
    * Linux  : `~/Arduino`
    * Windows: `~/Documents/Arduino`
 8. Create a folder named `hardware/MSE`, if it does not exist, and change directories to it
-9. Clone this repo & its submodules: `git clone --recurse-submodules https://github.com/stefandz/MSE_nRF52_Arduino`
+9. Clone this repo & its submodules: `git clone --recurse-submodules https://github.com/stefandz/MSE_nRF52_Arduino nrf52` or download this repo and place it in a folder named `nrf52` within the `hardware/MSE` folder
 10. Restart the Arduino IDE
 11. Once the BSP is installed, select 'MSE NRF52840 Rewards Board A from the Tools > Board > MSE nRF52 boards menu, which will update your system config to use the right compiler and settings for the nRF52.
 
