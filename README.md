@@ -8,7 +8,7 @@ This repository contains the Arduino BSP for MSE nRF52 series:
 
 ## BSP Installation
 
-1. [Download and install the Arduino IDE](https://www.arduino.cc/en/Main/Software) (At least v1.6.12)
+1. [Download and install the Arduino IDE](https://www.arduino.cc/en/Main/Software) (At least v1.6.12 - note that for Linux, there are often issues with old versions of Arduino in OS package repos - **always** install directly from the website)
 2. Start the Arduino IDE
 3. Go into Preferences
 4. Add https://www.adafruit.com/package_adafruit_index.json as an 'Additional Board Manager URL'
