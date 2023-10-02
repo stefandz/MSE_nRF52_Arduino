@@ -73,3 +73,59 @@ MSE_RBA.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
 MSE_RBA.menu.debug.l3=Level 3 (Segger SystemView)
 MSE_RBA.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
 MSE_RBA.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
+
+
+# ----------------------------------
+# MSE nRF52840 Bluetooth Controller
+# ----------------------------------
+MSE_BTC.name=MSE nRF52840 Bluetooth Controller
+
+# VID/PID for bootloader with/without UF2, Arduino + Circuitpython App
+MSE_BTC.vid.0=0x1915
+MSE_BTC.pid.0=0x59B0
+MSE_BTC.vid.1=0x1915
+MSE_BTC.pid.1=0x59B1
+
+
+# Upload
+MSE_BTC.bootloader.tool=bootburn
+MSE_BTC.upload.tool=nrfutil
+MSE_BTC.upload.protocol=nrfutil
+MSE_BTC.upload.use_1200bps_touch=true
+MSE_BTC.upload.wait_for_upload_port=true
+MSE_BTC.upload.maximum_size=815104
+MSE_BTC.upload.maximum_data_size=237568
+
+# Build
+MSE_BTC.build.mcu=cortex-m4
+MSE_BTC.build.f_cpu=64000000
+MSE_BTC.build.board=MSE_Bluetooth_Controller
+MSE_BTC.build.core=nRF5
+MSE_BTC.build.variant=MSE_Bluetooth_Controller
+MSE_BTC.build.usb_manufacturer="MSE"
+MSE_BTC.build.usb_product="MSE Bluetooth Controller"
+MSE_BTC.build.extra_flags=-DNRF52840_XXAA {build.flags.usb}
+MSE_BTC.build.ldscript=nrf52840_s140_v6.ld
+MSE_BTC.build.vid=0x1915
+# PID below generated randomly - according to Nordic, you are free to use their VID
+# for any product with a Nordic IC in it, but PID clash is your problem
+# see https://devzone.nordicsemi.com/f/nordic-q-a/33851/nrf52840---usb-vendor-id-and-usb-product-id
+# and https://devzone.nordicsemi.com/f/nordic-q-a/30440/nrf24lu1-pid-vid
+MSE_BTC.build.pid=0x59B2
+
+# SofDevice Menu
+MSE_BTC.menu.softdevice.s140v6=s140 6.1.1
+MSE_BTC.menu.softdevice.s140v6.build.sd_name=s140
+MSE_BTC.menu.softdevice.s140v6.build.sd_version=6.1.1
+MSE_BTC.menu.softdevice.s140v6.build.sd_fwid=0x00B6
+
+# Debug Menu
+MSE_BTC.menu.debug.l0=Level 0 (Release)
+MSE_BTC.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
+MSE_BTC.menu.debug.l1=Level 1 (Error Message)
+MSE_BTC.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
+MSE_BTC.menu.debug.l2=Level 2 (Full Debug)
+MSE_BTC.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
+MSE_BTC.menu.debug.l3=Level 3 (Segger SystemView)
+MSE_BTC.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
+MSE_BTC.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
