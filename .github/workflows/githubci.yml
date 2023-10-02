@@ -7,18 +7,20 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        arduino-platform: ['MSE_RBA']
+        arduino-platform: 
+          - 'MSE_RBA'
+          - 'MSE_BTC'
 
     runs-on: ubuntu-latest
     
     steps:
     - name: Setup Python
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v3
       with:
         python-version: '3.x'
         
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         submodules: 'true'
         

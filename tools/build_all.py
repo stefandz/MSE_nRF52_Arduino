@@ -18,7 +18,7 @@ skip_count = 0
 build_format = '| {:25} | {:35} | {:18} | {:6} |'
 build_separator = '-' * 88
 
-default_boards = [ 'MSE_RBA' ]
+default_boards = [ 'MSE_RBA', 'MSE_BTC' ]
 build_boards = []
 
 # build all variants if input not existed

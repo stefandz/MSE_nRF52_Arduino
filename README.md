@@ -5,6 +5,7 @@
 This repository contains the Arduino BSP for MSE nRF52 series:
 
 - MSE Rewards Board A
+- MSE Bluetooth Controller
 
 ## BSP Installation
 
