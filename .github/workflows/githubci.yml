@@ -96,5 +96,28 @@ jobs:
         touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Wire/examples/secondary_sender/.MSE_RBA.test.skip
         touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Wire/examples/SFRRanger_reader/.MSE_RBA.test.skip
 
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/Composite/mouse_external_flash/.MSE_BTC.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/HID/hid_composite/.MSE_BTC.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/HID/hid_composite_joy_featherwing/.MSE_BTC.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/MassStorage/msc_external_flash/.MSE_BTC.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/MassStorage/msc_external_flash_sdcard/.MSE_BTC.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/MassStorage/msc_sd/.MSE_BTC.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/MassStorage/msc_sdfat/.MSE_BTC.test.skip        
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Adafruit_TinyUSB_Arduino/examples/WebUSB/webusb_rgb/.MSE_BTC.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Bluefruit52Lib/examples/Hardware/adc_vbat/.MSE_BTC.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Bluefruit52Lib/examples/Peripheral/ancs_oled/.MSE_BTC.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Bluefruit52Lib/examples/Peripheral/client_cts_oled/.MSE_BTC.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Bluefruit52Lib/examples/Peripheral/image_eink_transfer/.MSE_BTC.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Bluefruit52Lib/examples/Peripheral/image_transfer/.MSE_BTC.test.skip 
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Bluefruit52Lib/examples/Peripheral/neomatrix/.MSE_BTC.test.skip                
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Bluefruit52Lib/examples/Peripheral/StandardFirmataBLE/.MSE_BTC.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Wire/examples/digital_potentiometer/.MSE_BTC.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Wire/examples/main_reader/.MSE_BTC.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Wire/examples/main_scan/.MSE_BTC.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Wire/examples/main_writer/.MSE_BTC.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Wire/examples/secondary_receiver/.MSE_BTC.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Wire/examples/secondary_sender/.MSE_BTC.test.skip
+        touch $HOME/work/MSE_nRF52_Arduino/MSE_nRF52_Arduino/libraries/Wire/examples/SFRRanger_reader/.MSE_BTC.test.skip        
+
     - name: Build examples
       run: python3 tools/build_all.py ${{ matrix.arduino-platform }}
