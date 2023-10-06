@@ -22,7 +22,7 @@ This repository contains the Arduino BSP for MSE nRF52 series:
 8. Create a folder named `hardware/MSE`, if it does not exist, and change directories to it
 9. Clone this repo & its submodules: `git clone --recurse-submodules https://github.com/stefandz/MSE_nRF52_Arduino nrf52` or download this repo and place it in a folder named `nrf52` within the `hardware/MSE` folder
 10. Restart the Arduino IDE
-11. Once the BSP is installed, select 'MSE NRF52840 Rewards Board A from the Tools > Board > MSE nRF52 boards menu, which will update your system config to use the right compiler and settings for the nRF52.
+11. Once the BSP is installed, select the appropriate option for the board you are working on from the Tools > Board > MSE nRF52 boards menu, which will update your system config to use the right compiler and settings for the nRF52.
 
 ### Adafruit's nrfutil tools
 
@@ -61,7 +61,7 @@ $ ln -s $HOME/prog/nordic/nrfjprog/nrfjprog /usr/local/bin/nrfjprog
 
 Once the tools above have been installed and added to your system path, from the Arduino IDE:
 
-- Select `Tools > Board > MSE nRF52 Boards > MSE nRF52840 Rewards Board A`
+- Select `Tools > Board > MSE nRF52 Boards > <Your Board Name>`
 - Select `Tools > Programmer > J-Link for Bluefruit nRF52`
 - Select `Tools > Burn Bootloader` with the board and J-Link connected
 
@@ -79,14 +79,14 @@ $ nrfjprog --reset -f nrf52
 
 This only works with nRF52840-based boards and require existing bootloader version is at least 0.4.0:
 
-- Quickly double tap reset button to put your board in to bootloader mode. A mass storage device i.e `MSE_REWARDS_A` will appear
-- Drap and drop the new UF2 file into `MSE_REWARDS_A` drive to perform update then wait until the board resets.
+- Quickly double tap reset button to put your board in to bootloader mode. A mass storage device e.g. `MSE_REWARDS_A` will appear
+- Drap and drop the new UF2 file into `MSE_REWARDS_A` drive (or the appropriate drive name for your board) to perform update then wait until the board resets.
 
 ### Update Bootloader with DFU
 
 To upgrade to the latest Bootloader + Softdevice using the serial port within Arduino IDE.
 
-- Select `Tools > Board > MSE nRF52 Boards > MSE nRF52840 Rewards Board A`
+- Select `Tools > Board > MSE nRF52 Boards > <Your Board Name>`
 - Select `Tools > Programmer > Bootloader DFU for Bluefruit nRF52`
 - Select `Tools > Burn Bootloader`
 - **WAIT** until the process complete ~30 seconds

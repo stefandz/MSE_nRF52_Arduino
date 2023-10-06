@@ -430,6 +430,7 @@ setRssi	KEYWORD2
 # Constants (LITERAL1)
 #######################################
 LED_RED	LITERAL1
+LED_GREEN	LITERAL1
 LED_BLUE	LITERAL1
 
 LED_BUILTIN	LITERAL1

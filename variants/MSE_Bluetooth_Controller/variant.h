@@ -44,12 +44,14 @@ extern "C"
 
 // LEDs (names defined as per schematic)
 #define PIN_LED2_R           (43) // P1.11
+#define PIN_LED2_G           (44) // P1.12
 #define PIN_LED2_B           (45) // P1.13
 
 #define LED_BUILTIN          PIN_LED2_R
 #define LED_CONN             PIN_LED2_B
 
 #define LED_RED              PIN_LED2_R
+#define LED_GREEN            PIN_LED2_G
 #define LED_BLUE             PIN_LED2_B
 
 #define LED_STATE_ON         0    // state when LED is illuminated
